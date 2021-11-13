@@ -1,5 +1,5 @@
 ## Learning Sources.
-1. [OglDev](https://ogldev.org/)
+1. [OglDev](https://ogldev.org/).
 
 ## Installation.
 
