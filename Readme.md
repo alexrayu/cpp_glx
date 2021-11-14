@@ -5,7 +5,7 @@
 ## Installation.
 
 1. Install the glx library.
-`$ apt install g++ make freeglut3-dev libglew-dev libglew2.1 libmagick++-dev libassimp-dev libglfw3 libglfw3-dev libglm-dev`
+`$ apt install g++ make cmake freeglut3-dev libglew-dev libglew2.1 libmagick++-dev libassimp-dev libglfw3 libglfw3-dev libglm-dev`
 
 ## Compiling.
 The included libraries need to be passed to the compiler as parameters.
