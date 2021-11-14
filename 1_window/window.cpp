@@ -24,7 +24,7 @@ using namespace glm;
 int main() {
 
   // Initialise GLFW.
-  // glewExperimental = true; // Needed for core profile.
+  glewExperimental = true; // Needed for core profile.
   if (!glfwInit()) {
     fprintf (stderr, "Failed to initialize GLFW\n");
     return -1;
@@ -46,13 +46,11 @@ int main() {
     return -1;
   }
   glfwMakeContextCurrent(window); // Initialize GLEW.
-  /*
   glewExperimental = true; // Needed in core profile.
   if (glewInit() != GLEW_OK) {
     fprintf(stderr, "Failed to initialize GLEW\n");
     return -1;
   }
-  */
 
   // Ensure we can capture the escape key being pressed below.
   glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
