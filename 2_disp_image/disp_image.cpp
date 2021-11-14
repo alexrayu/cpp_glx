@@ -1,7 +1,5 @@
 
 #define GLEW_STATIC
- 
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <GL/glew.h>
@@ -12,6 +10,7 @@ using namespace glm;
 int main() {
 
   // Initialise GLFW.
+  glewExperimental = true; // Needed for core profile.
   if (!glfwInit()) {
     fprintf (stderr, "Failed to initialize GLFW\n");
     return -1;
@@ -32,8 +31,12 @@ int main() {
     glfwTerminate();
     return -1;
   }
-  glfwSetWindowOpacity(window, 0.5f);
   glfwMakeContextCurrent(window); // Initialize GLEW.
+  glewExperimental = true; // Needed in core profile.
+  if (glewInit() != GLEW_OK) {
+    fprintf(stderr, "Failed to initialize GLEW\n");
+    return -1;
+  }
 
   // Ensure we can capture the escape key being pressed below.
   glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
@@ -42,7 +45,7 @@ int main() {
       // Clear the screen. It's not mentioned before Tutorial 02, but it can cause flickering, so it's there nonetheless.
       glClear(GL_COLOR_BUFFER_BIT);
 
-      // Draw nothing, see you in tutorial 2!
+      // Draw here!
 
       // Swap buffers
       glfwSwapBuffers(window);
